@@ -1,0 +1,104 @@
+android: # platform
+    latest: # version of platform (e.g. Android 8+ or Android <4.0.0)
+        release: # channel
+            google_play: # store or distribution channel; First store is default and preferred, if multiple stores are suitable
+                link: https://play.google.com/market/apps/details?id=com.example.app # link to app in store
+                update_date: 2022-12-31 # date of last update, to help finding the latest version available (optional)
+            samsung_galaxyapps:
+                link: https://galaxy.store/app/com.example.app
+            huawei_appgallery:
+                link: https://appgallery.huawei.com/#/app/C123456789
+            download:
+                link: https://example.com/app.apk
+                update_date: latest # means this is definitely the latest version available
+
+        beta:
+            google_play:
+                link: https://play.google.com/apps/testing/com.example.app
+            samsung_galaxyapps:
+                link: https://galaxy.store/app/com.example.app
+            download:
+                link: https://example.com/app.apk
+                update_date: latest
+
+    lt4.0.0: # This is the version of the app that will be installed on devices running Android "less than" 4.0.0
+        release:
+            google_play:
+                link: https://play.google.com/market/apps/details?id=com.example.app.lt4
+            samsung_galaxyapps:
+                link: https://galaxy.store/app/com.example.app.lt4
+        beta:
+            google_play:
+                link: https://play.google.com/apps/testing/com.example.app.lt4
+
+ios:
+    latest:
+        release:
+            app_store:
+                link: https://apps.apple.com/app/id123456789
+                update_date: 2022-12-31
+
+        beta:
+            app_store:
+                link: https://apps.apple.com/app/id123456789
+            download:
+                link: https://example.com/app.ipa
+                update_date: latest
+
+windows:
+    latest:
+        release:
+            winget:
+                id: example.example
+                update_date: 2022-11-24
+            microsoft_store:
+                link: https://www.microsoft.com/store/apps/123456789
+                update_date: 2022-12-31
+            download:
+                link: https://example.com/app.exe
+                update_date: latest
+        beta:
+            download:
+                link: https://example.com/app.exe
+                update_date: latest
+
+web:
+    latest:
+        release:
+            link: https://example.com/app
+            update_date: latest
+
+
+
+# Prefferation tree:
+# Platform > Version (latest suitable) > Channel (release) > Store (latest update_date > first in list) > Link
+
+
+history: # This is supposed to be a directory to all historical versions.
+    # Tree is supposed to go as follows, but we have to reconsider this first. Means: Not the final scheme plus we might not even suggest a scheme for this
+    # history/
+    #    android/
+    #        example_v1.0.0.apk
+    #        example_v1.0.1.apk
+    #        example_v1.1.0.apk
+    #        example_v1.1.1-rc1.apk
+    #        example_v1.1.1-rc2.apk
+    #    apple-ios/
+    #        example_v1.0.0.ipa
+    #        example_v1.0.1.ipa
+    #        example_v1.1.0.ipa
+    #        example_v1.1.1-rc1.ipa
+    #        example_v1.1.1-rc2.ipa
+    #    apple-macos/
+    #        example_v1.0.0.dmg
+    #        example_v1.0.1.dmg
+    #        example_v1.1.0.dmg
+    #        example_v1.1.1-rc1.dmg
+    #        example_v1.1.1-rc2.dmg
+    #    windows/
+    #        example_v1.0.0.exe
+    #        example_v1.0.1.exe
+    #        example_v1.1.0.exe
+    #        example_v1.1.1-rc1.exe
+    #        example_v1.1.1-rc2.exe
+
